@@ -11,7 +11,7 @@ RSpec.describe Passenger do
     end
 
     it "has a name" do 
-      expect(@charlie.name).to eq("Cnarlie")
+      expect(@charlie.name).to eq("Charlie")
     end
   end
 
