@@ -13,6 +13,10 @@ RSpec.describe Passenger do
     it "has a name" do 
       expect(@charlie.name).to eq("Charlie")
     end
+
+    it "has an age" do 
+      expect(@charlie.age).to eq(18)
+    end
   end
 
 end
