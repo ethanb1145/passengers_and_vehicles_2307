@@ -4,7 +4,8 @@ require "./lib/park"
 
 RSpec.describe Park do
   before(:each) do
-    @park = Park.new({name: "Parkington Park", admission_price: 10}) 
+    @park = Park.new({name: "Parkington Park", admission_price: 10})
+    @vehicle = Vehicle.new("2001", "Honda", "Civic")
   end
   describe "#initialize" do 
     it "exists" do
@@ -25,6 +26,21 @@ RSpec.describe Park do
 
     it "has a collection of passengers that entered the park" do 
       expect(@park.passengers).to eq([])
+    end
+  end
+  describe "#add_vehicle" do 
+    it "can add vehicle and its passengers to its collection" do
+      charlie = Passenger.new({"name" => "Charlie", "age" => 18})
+      jude = Passenger.new({"name" => "Jude", "age" => 20})
+      taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+      @vehicle.add_passenger(charlie)
+      @vehicle.add_passenger(jude)
+      @vehicle.add_passenger(taylor)
+      @park.add_vehicle(@vehicle)
+
+      expect(@vehicle.passengers).to eq([charlie, jude, taylor])
+      expect(@park.vehicles).to eq([@vehicle])
+      expect(@park.passengers).to eq([charlie, jude, taylor])
     end
   end
 end

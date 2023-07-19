@@ -7,4 +7,9 @@ class Park
     @passengers = []
     @revenue = 0
   end
+
+  def add_vehicle(vehicle)
+    @vehicles << vehicle
+    @passengers.concat(vehicle.passengers)
+  end
 end
