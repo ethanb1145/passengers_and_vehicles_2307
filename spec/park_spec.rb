@@ -27,7 +27,12 @@ RSpec.describe Park do
     it "has a collection of passengers that entered the park" do 
       expect(@park.passengers).to eq([])
     end
+
+    it "has a revenue" do 
+      expect(@park.revenue).to eq(0)
+    end
   end
+
   describe "#add_vehicle" do 
     it "can add vehicle and its passengers to its collection" do
       charlie = Passenger.new({"name" => "Charlie", "age" => 18})
@@ -41,6 +46,7 @@ RSpec.describe Park do
       expect(@vehicle.passengers).to eq([charlie, jude, taylor])
       expect(@park.vehicles).to eq([@vehicle])
       expect(@park.passengers).to eq([charlie, jude, taylor])
+      expect(@park.revenue).to eq(20)
     end
   end
 end
