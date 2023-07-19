@@ -20,8 +20,6 @@ class Park
     @passengers.each do |passenger|
       total_revenue += @admission_price if passenger.adult?
     end
-
     total_revenue
-
   end
 end

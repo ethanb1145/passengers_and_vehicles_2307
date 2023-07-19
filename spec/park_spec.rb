@@ -34,7 +34,7 @@ RSpec.describe Park do
   end
 
   describe "#add_vehicle" do 
-    it "can add vehicle and its passengers to its collection" do
+    it "can add vehicle and its passengers to its collection and make revenue from adults" do
       charlie = Passenger.new({"name" => "Charlie", "age" => 18})
       jude = Passenger.new({"name" => "Jude", "age" => 20})
       taylor = Passenger.new({"name" => "Taylor", "age" => 12})
