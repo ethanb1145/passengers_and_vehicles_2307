@@ -26,5 +26,15 @@ RSpec.describe Passenger do
     end
   end
 
+  describe "#driver?" do 
+    it "returns true if passenger age is >= 18" do
+      expect(@charlie.driver?).to be(false)
+
+      @charlie.drive
+
+      expect(@charlie.driver?).to be(true)
+    end
+  end
+
 end
   
